@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { UserCircle } from "lucide-react";
+import { UserCircle, Home } from "lucide-react";
 import {
   AuthError,
   clearAuth,
@@ -35,7 +35,15 @@ function SignedInActions({
   return (
     <div className="flex items-center gap-3">
       <Link
-        href="/meet"
+        href="/home"
+        className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-gray-600 transition-all duration-150 hover:bg-gray-100 hover:text-gray-900"
+      >
+        <Home className="h-4 w-4" />
+        <span className="hidden sm:inline">Home</span>
+      </Link>
+
+      <Link
+        href="/home"
         className="hidden items-center gap-2.5 rounded-xl border border-gray-200 bg-gray-50 px-3 py-1.5 text-gray-700 transition-colors hover:bg-gray-100 sm:flex"
       >
         {user.avatar ? (
